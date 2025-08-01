@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Product } from "@/types";
 import { Star } from "lucide-react";
 import AddProductButton from "./AddProductButton";
+import Image from "next/image";
 
 export default function ProductDetails({ product }: { product: Product }) {
 	return (
@@ -10,7 +11,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 			<Card className="overflow-hidden">
 				<CardContent className="p-0">
 					<div className="aspect-square bg-muted">
-						<img
+						<Image
 							src={product.image}
 							alt={product.title}
 							className="w-full h-full object-cover"

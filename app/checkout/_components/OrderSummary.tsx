@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAppSelector } from "@/lib/store/hooks";
+import Image from "next/image";
 
 export default function OrderSummary() {
 	const { items, totals } = useAppSelector((state) => state.cart);
@@ -21,7 +22,7 @@ export default function OrderSummary() {
 						{items.map((item) => (
 							<div key={item.id} className="flex justify-between items-center">
 								<div className="flex items-center gap-3">
-									<img
+									<Image
 										src={item.image}
 										alt={item.title}
 										className="w-12 h-12 object-cover rounded"
