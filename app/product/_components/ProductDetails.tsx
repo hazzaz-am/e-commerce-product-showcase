@@ -1,24 +1,10 @@
-"use client";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-	countTotalCartItems,
-	calculateTotalAmount,
-	addToCart,
-} from "@/lib/store/features/cart/cartSlice";
-import { useAppDispatch } from "@/lib/store/hooks";
 import { Product } from "@/types";
 import { Star } from "lucide-react";
+import AddProductButton from "./AddProductButton";
 
 export default function ProductDetails({ product }: { product: Product }) {
-	const dispatch = useAppDispatch();
-
-	const handleProductAdd = (product: Product) => {
-		dispatch(addToCart(product));
-		dispatch(calculateTotalAmount());
-		dispatch(countTotalCartItems());
-	};
 	return (
 		<div className="grid gap-8 md:grid-cols-2">
 			<Card className="overflow-hidden">
@@ -60,13 +46,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 				</div>
 
 				<div className="space-y-3">
-					<Button
-						className="w-full cursor-pointer"
-						size="lg"
-						onClick={() => handleProductAdd(product)}
-					>
-						Add to Cart
-					</Button>
+					<AddProductButton product={product} />
 				</div>
 			</div>
 		</div>

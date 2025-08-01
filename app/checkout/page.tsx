@@ -1,5 +1,13 @@
 import { ShoppingCart } from "lucide-react";
 import OrderForm from "./_components/OrderForm";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+	title: "Checkout | Complete Your Purchase",
+	description:
+		"Complete your purchase and enjoy a seamless shopping experience with our easy-to-use checkout process.",
+};
 
 export default function CheckoutPage() {
 	return (

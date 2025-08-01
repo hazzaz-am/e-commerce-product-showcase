@@ -15,7 +15,7 @@ export default function SuccessMessage() {
 					You will receive a confirmation email shortly.
 				</p>
 				<Button className="mt-6">
-					<Link href="/">Continue Shopping</Link>
+					<Link href="/orders">See Your Orders</Link>
 				</Button>
 			</div>
 		</div>

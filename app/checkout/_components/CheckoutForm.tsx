@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -24,9 +26,8 @@ export default function CheckoutForm({
 	} = useForm<ICheckoutForm>();
 
 	const onSubmit = (data: ICheckoutForm) => {
-		console.log("Order submitted:", data);
 		const newOrder: IOrderItem = {
-			orderId: Date.now().toString() + crypto.randomUUID(),
+			orderId: Date.now().toString(),
 			customerName: data.fullName,
 			totalItems: totalItems,
 			totalAmount: totals,
