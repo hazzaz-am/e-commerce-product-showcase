@@ -17,7 +17,7 @@ const navigationItems = [
 export const Navbar = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const currentPath = usePathname();
-	const items = useAppSelector((state) => state.cart.items);
+	const totalItems = useAppSelector((state) => state.cart.totalItems);
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -62,12 +62,12 @@ export const Navbar = () => {
 								className="relative p-2 hover:bg-nav-hover rounded-md transition-colors duration-200"
 							>
 								<ShoppingCart size={20} className="text-foreground" />
-								{items.length > 0 && (
+								{totalItems > 0 && (
 									<Badge
 										variant="destructive"
 										className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
 									>
-										{items.length}
+										{totalItems}
 									</Badge>
 								)}
 							</Link>

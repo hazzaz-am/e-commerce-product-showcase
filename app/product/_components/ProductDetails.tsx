@@ -2,7 +2,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { add } from "@/lib/store/features/cart/cartSlice";
+import {
+	countTotalCartItems,
+	calculateTotalAmount,
+	addToCart,
+} from "@/lib/store/features/cart/cartSlice";
 import { useAppDispatch } from "@/lib/store/hooks";
 import { Product } from "@/types";
 import { Star } from "lucide-react";
@@ -10,8 +14,10 @@ import { Star } from "lucide-react";
 export default function ProductDetails({ product }: { product: Product }) {
 	const dispatch = useAppDispatch();
 
-	const handleProductAdd = (id: string) => {
-		dispatch(add(id));
+	const handleProductAdd = (product: Product) => {
+		dispatch(addToCart(product));
+		dispatch(calculateTotalAmount());
+		dispatch(countTotalCartItems());
 	};
 	return (
 		<div className="grid gap-8 md:grid-cols-2">
@@ -57,7 +63,7 @@ export default function ProductDetails({ product }: { product: Product }) {
 					<Button
 						className="w-full cursor-pointer"
 						size="lg"
-						onClick={() => handleProductAdd(`${product.id}`)}
+						onClick={() => handleProductAdd(product)}
 					>
 						Add to Cart
 					</Button>
