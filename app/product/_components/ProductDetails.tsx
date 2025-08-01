@@ -1,12 +1,18 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getSingleProduct } from "@/lib/get-products";
+import { add } from "@/lib/store/features/cart/cartSlice";
+import { useAppDispatch } from "@/lib/store/hooks";
+import { Product } from "@/types";
 import { Star } from "lucide-react";
 
-export default async function ProductDetails({ id }: { id: string }) {
-	const product = await getSingleProduct(id);
+export default function ProductDetails({ product }: { product: Product }) {
+	const dispatch = useAppDispatch();
 
+	const handleProductAdd = (id: string) => {
+		dispatch(add(id));
+	};
 	return (
 		<div className="grid gap-8 md:grid-cols-2">
 			<Card className="overflow-hidden">
@@ -48,7 +54,11 @@ export default async function ProductDetails({ id }: { id: string }) {
 				</div>
 
 				<div className="space-y-3">
-					<Button className="w-full cursor-pointer" size="lg">
+					<Button
+						className="w-full cursor-pointer"
+						size="lg"
+						onClick={() => handleProductAdd(`${product.id}`)}
+					>
 						Add to Cart
 					</Button>
 				</div>

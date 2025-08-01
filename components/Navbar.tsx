@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Badge } from "./ui/badge";
+import { useAppSelector } from "@/lib/store/hooks";
 
 const navigationItems = [
 	{ name: "Home", href: "/", icon: Home },
@@ -16,6 +17,7 @@ const navigationItems = [
 export const Navbar = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const currentPath = usePathname();
+	const items = useAppSelector((state) => state.cart.items);
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -54,19 +56,20 @@ export const Navbar = () => {
 							</div>
 						</div>
 
-						{/* Mobile menu button */}
 						<div className="flex items-center gap-4">
 							<Link
 								href="/checkout"
 								className="relative p-2 hover:bg-nav-hover rounded-md transition-colors duration-200"
 							>
 								<ShoppingCart size={20} className="text-foreground" />
-								<Badge
-									variant="destructive"
-									className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
-								>
-									2
-								</Badge>
+								{items.length > 0 && (
+									<Badge
+										variant="destructive"
+										className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+									>
+										{items.length}
+									</Badge>
+								)}
 							</Link>
 							<div className="md:hidden">
 								<Button

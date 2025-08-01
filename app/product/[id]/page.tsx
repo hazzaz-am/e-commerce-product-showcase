@@ -33,6 +33,8 @@ export default async function ProductDetailPage({
 	params: Promise<{ id: string }>;
 }) {
 	const { id } = await params;
+	const product = await getSingleProduct(id);
+
 	return (
 		<div className="min-h-screen bg-background py-8">
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +44,7 @@ export default async function ProductDetailPage({
 						Back to Products
 					</Link>
 				</Button>
-				<ProductDetails id={id} />
+				<ProductDetails product={product} />
 			</div>
 		</div>
 	);
