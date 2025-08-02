@@ -31,21 +31,9 @@ A simple e-commerce product showcase built with Next.js and Tailwind CSS, featur
 
 ## 📁 Project Structure and Logic
 
-├── public/               # Static assets (images, etc.)
-├── app/
-│   ├── _components/       # Reusable UI components for home page
-│   ├── product/            # Application pages (folder-based routing)
-│   |── error.tsx         # Custom error page
-│   |── not-found.tsx     # Custom 404 page
-│   |── robots.ts        # Generate robots.txt for SEO
-│   |── sitemap.ts       # Generate sitemap.xml for SEO
-├── lib/                  # Utility functions and redux store setup
-├── next.config.ts        # Next.js configuration
-└── package.json
+- Uses folder-based routing via the /folder with page.tsx directory is page route.
 
-#### Logic Overview:
-
-- Uses folder-based routing via the /folder with page.tsx directory.
+- _components/_ contains components that are reused for specific pages.
 
 - Each page can define its own SEO settings using metadata from next.
 
