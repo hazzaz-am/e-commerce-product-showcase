@@ -36,16 +36,14 @@ export default async function ProductDetailPage({
 	const product = await getSingleProduct(id);
 
 	return (
-		<div className="min-h-screen bg-background py-8">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<Button variant="ghost" asChild className="mb-8">
-					<Link href="/">
-						<ArrowLeft className="w-4 h-4 mr-2" />
-						Back to Products
-					</Link>
-				</Button>
-				<ProductDetails product={product} />
-			</div>
-		</div>
+		<section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Button variant="ghost" asChild className="mb-8">
+				<Link href="/">
+					<ArrowLeft className="w-4 h-4 mr-2" />
+					Back to Products
+				</Link>
+			</Button>
+			<ProductDetails product={product} />
+		</section>
 	);
 }

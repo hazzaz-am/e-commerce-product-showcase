@@ -1,4 +1,3 @@
-
 import { Metadata } from "next";
 import CheckoutSection from "./_components/CheckoutSection";
 
@@ -10,10 +9,8 @@ export const metadata: Metadata = {
 
 export default function CheckoutPage() {
 	return (
-		<div className="min-h-screen bg-background py-8">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<CheckoutSection />
-			</div>
-		</div>
+		<section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<CheckoutSection />
+		</section>
 	);
 }

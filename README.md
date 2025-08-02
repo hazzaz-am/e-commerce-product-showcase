@@ -2,6 +2,14 @@
 
 A simple e-commerce product showcase built with Next.js and Tailwind CSS, featuring a clean and responsive design. This project allows users to view products, add them to the cart, proceed to checkout and see order summaries.
 
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) - React framework for production
+- [Redux Toolkit](https://redux-toolkit.js.org/) - Client-side State management
+- [React Hook Form](https://react-hook-form.com/) - Form management
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Shadcn/ui](https://ui.shadcn.com/) - Component library for building UI
+
 ## Features
 
 - 📝 View products
@@ -21,6 +29,49 @@ A simple e-commerce product showcase built with Next.js and Tailwind CSS, featur
 
 - **Component Reusability:** Logic is broken into small, testable components like `ProductItem`, `ProductDetails`, and `AddProductButton`.
 
+## 📁 Project Structure and Logic
+
+├── public/               # Static assets (images, etc.)
+├── app/
+│   ├── _components/       # Reusable UI components for home page
+│   ├── product/            # Application pages (folder-based routing)
+│   |── error.tsx         # Custom error page
+│   |── not-found.tsx     # Custom 404 page
+│   |── robots.ts        # Generate robots.txt for SEO
+│   |── sitemap.ts       # Generate sitemap.xml for SEO
+├── lib/                  # Utility functions and redux store setup
+├── next.config.ts        # Next.js configuration
+└── package.json
+
+#### Logic Overview:
+
+- Uses folder-based routing via the /folder with page.tsx directory.
+
+- Each page can define its own SEO settings using metadata from next.
+
+- Shared UI elements are in /components for reusability.
+
+- API calls are handled in lib/.
+
+- Styling is handled via Tailwind CSS and component library Shadcn/ui.
+
+
+## 🔍 SEO Techniques Used
+
+✅ **Dynamic Meta Tags** export dynamic metadata from Next.js.
+
+✅ **Semantic HTML Tags** like `main` `section` `nav` for proper content structure.
+
+✅ **Clean URLs** with Next.js routing (e.g., /orders, /product/[id]).
+
+✅ **Image Optimization** using `Image` from next/image for lazy loading and better performance.
+
+✅ **robots.txt** and **sitemap.xml** added in the /app directory.
+
+✅ **Fast load times** with built-in Next.js performance features SSG.
+
+
+
 ## Live Demo
 
 Check out the live demo [Click here](https://e-commerce-product-showcase-puce.vercel.app).
@@ -28,14 +79,6 @@ Check out the live demo [Click here](https://e-commerce-product-showcase-puce.ve
 ## Interface Preview
 
 ![Interface Preview](/public/preview.png)
-
-## Tech Stack
-
-- [Next.js](https://nextjs.org/) - React framework for production
-- [Redux Toolkit](https://redux-toolkit.js.org/) - Client-side State management
-- [React Hook Form](https://react-hook-form.com/) - Form management
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Shadcn/ui](https://ui.shadcn.com/) - Component library for building UI
 
 ## Getting Started
 

@@ -35,9 +35,9 @@ export default function ProductItem({ product }: { product: Product }) {
 				<p className="text-lg font-semibold text-primary">${product.price}</p>
 			</CardContent>
 			<CardFooter className="p-4 pt-0">
-				<Button className="w-full">
-					<Link href={`/product/${product.id}`}>View Details</Link>
-				</Button>
+				<Link href={`/product/${product.id}`} className="w-full cursor-pointer">
+					<Button className="w-full cursor-pointer">View Details</Button>
+				</Link>
 			</CardFooter>
 		</Card>
 	);

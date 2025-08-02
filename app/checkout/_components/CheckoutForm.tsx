@@ -97,7 +97,7 @@ export default function CheckoutForm({
 
 						<Button
 							type="submit"
-							className="w-full mt-6"
+							className="w-full mt-6 cursor-pointer"
 							size="lg"
 							disabled={items.length === 0}
 						>

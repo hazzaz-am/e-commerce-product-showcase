@@ -48,7 +48,7 @@ export default function OrderTable() {
 								<TableCell className="text-right">
 									<Dialog>
 										<DialogTrigger asChild>
-											<Button variant="outline" size="sm">
+											<Button variant="outline" size="sm" className="cursor-pointer">
 												<Eye className="w-4 h-4 mr-2" />
 												View Details
 											</Button>

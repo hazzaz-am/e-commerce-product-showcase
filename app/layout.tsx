@@ -32,7 +32,7 @@ export default function RootLayout({
 			>
 				<StoreProvider>
 					<Navbar />
-					{children}
+					<main className="min-h-screen bg-background py-8">{children}</main>
 				</StoreProvider>
 			</body>
 		</html>

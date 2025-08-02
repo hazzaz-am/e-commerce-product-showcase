@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function OrdersPage() {
 	return (
-		<section className="container mx-auto px-4 py-8">
+		<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<OrderSection />
 		</section>
 	);
