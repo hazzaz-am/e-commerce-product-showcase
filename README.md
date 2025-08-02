@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce Product Showcase
+
+A simple e-commerce product showcase built with Next.js and Tailwind CSS, featuring a clean and responsive design. This project allows users to view products, add them to the cart, proceed to checkout and see order summaries.
+
+## Features
+
+- 📝 View products
+- ⚡ Quick access to product details
+- 🛒 Add products to cart
+- 🏁 Checkout process
+- 📦 Order summary
+- 💅 Responsive design
+
+## Project Breakdown
+
+- **Fetch Products:** Uses `Next.js`'s `generateStaticParams` to fetch product data from a mock API endpoint called `fakestore`, ensuring fast load times.
+
+- **State Management:** `Redux Toolkit` is used for managing the cart and order state, allowing users to add to cart, and proceed to checkout. User can also see the order summary.
+
+- **Keep Server Components:** The project utilizes Next.js's server components to fetch product data, ensuring that the initial page load is fast and SEO-friendly.
+
+- **Component Reusability:** Logic is broken into small, testable components like `ProductItem`, `ProductDetails`, and `AddProductButton`.
+
+## Live Demo
+
+Check out the live demo [Click here](https://e-commerce-product-showcase-puce.vercel.app).
+
+## Interface Preview
+
+![Interface Preview](/public/preview.png)
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) - React framework for production
+- [Redux Toolkit](https://redux-toolkit.js.org/) - Client-side State management
+- [React Hook Form](https://react-hook-form.com/) - Form management
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Shadcn/ui](https://ui.shadcn.com/) - Component library for building UI
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- node.js
+- npm
+
+### Installation
+
+1. Clone the repository
+
+```
+git clone https://github.com/hazzaz-am/e-commerce-product-showcase
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Run project locally:
 
-## Learn More
+```
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🙋‍♂️ About Me
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I'm `Hazzaz Abdul Mannan`, a passionate frontend developer with a focus on building clean, interactive, and user-friendly interfaces. I enjoy learning new technologies and continuously improving my skills.
