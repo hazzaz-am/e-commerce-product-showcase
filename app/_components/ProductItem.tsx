@@ -22,6 +22,8 @@ export default function ProductItem({ product }: { product: Product }) {
 						src={product.image}
 						alt={product.title}
 						className="w-full h-full object-cover"
+						width={300}
+						height={300}
 						loading="lazy"
 					/>
 				</div>

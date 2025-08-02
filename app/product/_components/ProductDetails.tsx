@@ -14,6 +14,8 @@ export default function ProductDetails({ product }: { product: Product }) {
 						<Image
 							src={product.image}
 							alt={product.title}
+							width={500}
+							height={500}
 							className="w-full h-full object-cover"
 						/>
 					</div>

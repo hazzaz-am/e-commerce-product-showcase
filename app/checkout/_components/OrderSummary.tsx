@@ -25,6 +25,8 @@ export default function OrderSummary() {
 									<Image
 										src={item.image}
 										alt={item.title}
+										width={48}
+										height={48}
 										className="w-12 h-12 object-cover rounded"
 									/>
 									<div>
